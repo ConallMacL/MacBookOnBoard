@@ -491,18 +491,51 @@ function drawBadge(score){
   const c = document.getElementById("badgeCanvas");
   const ctx = c.getContext("2d");
   const W=c.width, H=c.height, CX=W/2, CY=H/2;
+
+  // Outer gradient ring
   const rg = ctx.createRadialGradient(CX, CY, 80, CX, CY, 380);
-  rg.addColorStop(0, "#3b2a82"); rg.addColorStop(1, "#0A66C2");
-  ctx.fillStyle = rg; ctx.beginPath(); ctx.arc(CX,CY,360,0,Math.PI*2); ctx.fill();
-  ctx.lineWidth = 18; ctx.strokeStyle="rgba(255,255,255,.5)"; ctx.beginPath(); ctx.arc(CX,CY,330,0,Math.PI*2); ctx.stroke();
-  ctx.fillStyle="rgba(255,255,255,.92)"; ctx.beginPath(); ctx.arc(CX,CY,260,0,Math.PI*2); ctx.fill();
-  ctx.strokeStyle="#0A66C2"; ctx.lineWidth=26; ctx.lineCap="round"; ctx.beginPath(); ctx.arc(CX, CY, 150, Math.PI*0.15, Math.PI*1.85); ctx.stroke();
-  ctx.fillStyle="#0A66C2";
-  ctx.font="bold 44px Inter, Arial"; centerText(ctx, "COGNITA SCHOOLS", CX, CY-40);
-  ctx.font="600 34px Inter, Arial"; centerText(ctx, "Digital Excellence Badge", CX, CY+10);
-  ctx.font="700 32px Inter, Arial"; centerText(ctx, "MacBook in Education Specialist", CX, CY+60);
-  ctx.fillStyle="#2ea44f"; roundRect(ctx, CX-150, CY+110, 300, 64, 20, true, false);
-  ctx.fillStyle="#fff"; ctx.font="bold 30px Inter, Arial"; centerText(ctx, `Achievement: ${score}/5`, CX, CY+152);
+  rg.addColorStop(0, "#3b2a82"); // deep purple
+  rg.addColorStop(1, "#0A66C2"); // Cognita blue
+  ctx.fillStyle = rg;
+  ctx.beginPath(); ctx.arc(CX,CY,360,0,Math.PI*2); ctx.fill();
+
+  // White inner circle
+  ctx.fillStyle = "#fff";
+  ctx.beginPath(); ctx.arc(CX,CY,280,0,Math.PI*2); ctx.fill();
+
+  // Optional laurel wreath arcs (decorative)
+  ctx.strokeStyle = "#d4af37"; // gold
+  ctx.lineWidth = 6;
+  ctx.beginPath();
+  ctx.arc(CX-100,CY+20,160,Math.PI*0.6,Math.PI*1.2);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(CX+100,CY+20,160,Math.PI*-0.2,Math.PI*0.8);
+  ctx.stroke();
+
+  // Title
+  ctx.fillStyle = "#0A2C66"; // dark navy
+  ctx.font = "bold 44px Inter, Arial";
+  centerText(ctx, "COGNITA SCHOOLS", CX, CY-60);
+
+  // Subtitle
+  ctx.fillStyle = "#3b2a82"; // purple
+  ctx.font = "600 34px Inter, Arial";
+  centerText(ctx, "Digital Excellence Badge", CX, CY);
+
+  // Specialist label
+  ctx.fillStyle = "#1b1f23"; // blackish grey
+  ctx.font = "700 28px Inter, Arial";
+  centerText(ctx, "MacBook in Education Specialist", CX, CY+50);
+
+  // Bottom banner with achievement
+  ctx.fillStyle = "#0A66C2";
+  roundRect(ctx, CX-180, CY+120, 360, 60, 20, true, false);
+  ctx.fillStyle = "#fff";
+  ctx.font = "bold 28px Inter, Arial";
+  centerText(ctx, `Achievement: ${score}/5`, CX, CY+160);
+}
+
 }
 function centerText(ctx, text, x, y){ const w = ctx.measureText(text).width; ctx.fillText(text, x - w/2, y); }
 
