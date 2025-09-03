@@ -118,12 +118,12 @@
     <details class="module" id="m1" open>
       <summary><span>Module 1: Getting Started 💻</span><span class="pill">Tick all to unlock next</span></summary>
       <div class="content">
-        <div class="checklist" data-module="1">
-          <label class="check"><input type="checkbox" /> Log in with your Managed Apple ID.</label>
-          <label class="check"><input type="checkbox" /> Explore the Desktop, Dock and Menu Bar.</label>
-          <label class="check"><input type="checkbox" /> Open <em>System Settings</em> and review Wi-Fi, Displays and Privacy &amp; Security.</label>
-          <label class="check"><input type="checkbox" /> Open Finder and locate your iCloud Drive.</label>
-        </div>
+       <div class="checklist" data-module="1">
+  <label class="check"><input type="checkbox" /> Log in with your Managed Apple ID.</label>
+  <label class="check"><input type="checkbox" /> Explore the Desktop, Dock and Menu Bar.</label>
+  <label class="check"><input type="checkbox" /> Open <em>System Settings</em> and review Wi-Fi, Displays and Privacy &amp; Security.</label>
+  <label class="check"><input type="checkbox" /> Open Finder and locate your iCloud Drive.</label>
+</div>
         <div class="callout"><strong>Wow moment:</strong> Press <span class="kbd">⌘</span> + <span class="kbd">Space</span> and type <code>64*7</code> — Spotlight calculates instantly and can convert units too.</div>
         <div class="challenge"><strong>Challenge:</strong> Add a fingerprint in <em>Touch ID &amp; Password</em> and then unlock your Mac with Touch ID.</div>
         <details class="howto" style="margin-top:10px">
@@ -330,9 +330,16 @@ function evalLocks(){
     const mod = document.getElementById(modules[i]);
     const next = document.getElementById(modules[i+1]);
     const allTicked = $$(".checklist input", mod).every(cb=>cb.checked);
-    if(allTicked){ next.classList.remove("locked"); $("summary .pill", next).textContent = "Ready"; }
-    else{ next.classList.add("locked"); $("summary .pill", next).textContent = "Locked"; }
+    if(allTicked){
+      next.classList.remove("locked");
+      $("summary .pill", next).textContent = "Ready";
+    } else {
+      next.classList.add("locked");
+      $("summary .pill", next).textContent = "Locked";
+    }
   }
+}
+
   updateProgressUI();
 }
 
