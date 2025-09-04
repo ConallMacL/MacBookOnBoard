@@ -145,12 +145,61 @@
             <a class="btn small" href="https://support.apple.com/guide/mac-help/take-a-screenshot-mh26782/mac" target="_blank" rel="noopener">Apple how-to</a>
           </div>
         </div>
-        <div class="card">
-          <h3>Gestures (visual)</h3>
-          <div class="row" style="flex-wrap:wrap">
-            <div class="caption">Two-finger scroll • Three-finger swipe • Pinch to zoom</div>
-          </div>
-        </div>
+      <div class="card">
+  <h3>Gestures (visual)</h3>
+  <div class="gallery grid-3">
+    <!-- Two-finger scroll -->
+    <div class="gesture">
+      <svg viewBox="0 0 200 120" aria-label="Two-finger scroll">
+        <rect x="10" y="6" width="180" height="108" rx="12" fill="#eef4ff" stroke="#cfd6e1"/>
+        <circle cx="92" cy="64" r="12" fill="#bbb"/>
+        <circle cx="112" cy="64" r="12" fill="#bbb"/>
+        <defs>
+          <marker id="arrowV" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#0A66C2"/>
+          </marker>
+        </defs>
+        <path d="M102 30 L102 50" stroke="#0A66C2" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowV)"/>
+        <path d="M102 98 L102 78" stroke="#0A66C2" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowV)"/>
+      </svg>
+      <small>Two-finger scroll</small>
+    </div>
+
+    <!-- Three-finger swipe -->
+    <div class="gesture">
+      <svg viewBox="0 0 200 120" aria-label="Three-finger swipe">
+        <rect x="10" y="6" width="180" height="108" rx="12" fill="#eef4ff" stroke="#cfd6e1"/>
+        <circle cx="84" cy="74" r="10" fill="#bbb"/>
+        <circle cx="102" cy="74" r="10" fill="#bbb"/>
+        <circle cx="120" cy="74" r="10" fill="#bbb"/>
+        <defs>
+          <marker id="arrowH" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#0A66C2"/>
+          </marker>
+        </defs>
+        <path d="M50 44 L150 44" stroke="#0A66C2" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowH)"/>
+      </svg>
+      <small>Three-finger swipe (spaces)</small>
+    </div>
+
+    <!-- Pinch to zoom -->
+    <div class="gesture">
+      <svg viewBox="0 0 200 120" aria-label="Pinch to zoom">
+        <rect x="10" y="6" width="180" height="108" rx="12" fill="#eef4ff" stroke="#cfd6e1"/>
+        <circle cx="90" cy="60" r="10" fill="#bbb"/>
+        <circle cx="120" cy="60" r="10" fill="#bbb"/>
+        <path d="M90 60 L70 40 M120 60 L140 40" stroke="#0A66C2" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <small>Pinch to zoom</small>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top:8px">
+    <a class="btn small" href="https://support.apple.com/102482" target="_blank" rel="noopener">All Multi-Touch gestures</a>
+    <a class="btn small" href="https://support.apple.com/guide/mac-help/change-trackpad-settings-mchlp1226/mac" target="_blank" rel="noopener">Trackpad settings</a>
+  </div>
+</div>
+
       </div>
       <div class="checklist" style="margin-top:8px">
         <label class="check"><input type="checkbox" /> Create a Keynote deck and use <em>Play</em> to present.</label>
